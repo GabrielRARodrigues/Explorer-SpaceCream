@@ -21,7 +21,6 @@ body {
 .page {
   margin-inline: auto;
   max-width: 400px;
-  background-color: var(--bg-color);
 }
 
 header {
@@ -50,9 +49,13 @@ header h1 {
 header img {
   max-width: 14rem;
 }
+header p {
+  display: none;
+}
 
 main {
   padding: 1.4rem 3.2rem 6rem;
+  background-color: var(--bg-color);
 }
 
 p {
@@ -63,7 +66,6 @@ p {
   color: var(--text-color);
   text-align: center;
 }
-
 .cards {
   margin-top: 6.4rem;
   display: flex;
@@ -113,5 +115,33 @@ p {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    max-width: 100%;
+  }
+
+  header p {
+    display: block;
+    max-width: 275px;
+    margin: 3.2rem 5rem;
+  }
+
+  main {
+    background-color: var(--main-title-color);
+    padding: 6.4rem 8.2rem;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  main p {
+    display: none;
   }
 }
