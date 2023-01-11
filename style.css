@@ -5,13 +5,13 @@
 }
 :root {
   font-size: 62.5%;
-  --bg-color: hsl(233, 100%, 97%);
-  --header-bg-color: hsl(218, 17%, 62%);
-  --title-bg-color: hsl(275, 18%, 79%);
-  --subtitle-bg-color: hsl(312, 91%, 96%);
+  --bg-color: #f0f1ff;
+  --header-bg-color: #8e9aaf;
+  --title-bg-color: #cbc0d3;
+  --subtitle-bg-color: #feecfa;
   --text-color: #23053a;
   --main-title-color: #ffffff;
-  --subtitle-color: hsl(232, 17%, 35%);
+  --subtitle-color: #4a4e68;
   --title-font: 'Staatliches', cursive;
   --text-font: 'Palanquin', sans-serif;
 }
@@ -76,6 +76,14 @@ p {
 .card {
   position: relative;
 }
+
+.cards .card:nth-child(5) {
+  display: none;
+}
+.cards .card:nth-child(6) {
+  display: none;
+}
+
 .card img {
   animation: downtop 1000ms;
 }
@@ -93,6 +101,10 @@ p {
   top: 16px;
   right: 16px;
   animation: topdown 500ms 500ms backwards;
+}
+
+footer {
+  display: none;
 }
 
 @keyframes topdown {
@@ -118,11 +130,14 @@ p {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .page {
     display: grid;
     grid-template-columns: 37.5rem 1fr;
     max-width: 100%;
+  }
+  header {
+    grid-row: span 2;
   }
 
   header img {
@@ -147,7 +162,7 @@ p {
 
   main {
     background-color: var(--main-title-color);
-    padding: 6.4rem 8.2rem;
+    padding: 6.4rem 8.2rem 5rem;
   }
   main p {
     display: none;
@@ -163,7 +178,18 @@ p {
   }
   .card img {
     height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+    transition: all 350ms;
   }
+  .card img:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+  }
+  .card h3 {
+    display: none;
+  }
+
   .cards .card:nth-child(1) {
     grid-area: A;
   }
@@ -177,9 +203,26 @@ p {
     grid-area: D;
   }
   .cards .card:nth-child(5) {
+    display: block;
     grid-area: E;
   }
   .cards .card:nth-child(6) {
+    display: block;
     grid-area: C;
+  }
+
+  footer {
+    display: block;
+    color: var(--subtitle-color);
+    grid-column: 2;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-align: center;
+    margin-bottom: 4.6rem;
+  }
+  footer a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
   }
 }
