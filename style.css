@@ -18,6 +18,13 @@
 body {
   font-size: 1.6rem;
 }
+
+header p,
+.cards .card:nth-child(5),
+.cards .card:nth-child(6),
+footer {
+  display: none;
+}
 .page {
   margin-inline: auto;
   max-width: 400px;
@@ -49,9 +56,6 @@ header h1 {
 header img {
   max-width: 14rem;
 }
-header p {
-  display: none;
-}
 
 main {
   padding: 1.4rem 3.2rem 6rem;
@@ -77,13 +81,6 @@ p {
   position: relative;
 }
 
-.cards .card:nth-child(5) {
-  display: none;
-}
-.cards .card:nth-child(6) {
-  display: none;
-}
-
 .card img {
   animation: downtop 1000ms;
 }
@@ -101,10 +98,6 @@ p {
   top: 16px;
   right: 16px;
   animation: topdown 500ms 500ms backwards;
-}
-
-footer {
-  display: none;
 }
 
 @keyframes topdown {
@@ -133,7 +126,7 @@ footer {
 @media screen and (min-width: 1024px) {
   .page {
     display: grid;
-    grid-template-columns: 37.5rem 1fr;
+    grid-template-columns: 30% 1fr;
     max-width: 100%;
   }
   header {
@@ -151,9 +144,11 @@ footer {
 
   header p {
     display: block;
-    padding: 0 4rem;
+    max-width: 280px;
+    margin-inline: auto;
+    text-align: center;
     margin-top: 3.2rem;
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: 2rem;
     text-align: center;
     font-weight: 400;
@@ -168,6 +163,7 @@ footer {
     display: none;
   }
   .cards {
+    margin-top: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
